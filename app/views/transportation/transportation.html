@@ -1,0 +1,46 @@
+<div data-role="view" id="transportation" data-model="APP.transportation.model" data-init="APP.transportation.events.init" data-after-show="APP.transportation.events.afterShow">
+
+  <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+            <a data-role="button" href="#leftNav" data-rel="drawer" data-align="left">
+              <span class="icon-lines"></span>
+            </a>
+        </div>
+    </header>
+
+
+  <span data-bind="source: transportation" data-template="transportation-template"></span>
+
+  <div data-role="footer">
+      <footer data-role="footer">
+        <div data-role="navbar">
+            <a data-bind="source: days" data-template="days-template"></a>
+        </div>
+      </footer>
+  </div>
+
+</div>
+
+<script type="text/x-kendo-template" id="transportation-template">
+  <div class="pure-g center">
+    <div class="pure-u-1 center">
+      <h2>How do you get to school?</h2>
+      <div style="display:block"><a id="bus" data-click="APP.transportation.events.selectTransportation" data-role="button"><img src="img/bus.png"/></a>
+      </div>
+      <div class="pure-u-1 center">
+      <a id="car" data-click="APP.transportation.events.selectTransportation" data-role="button"><img src="img/car.png"/></a>
+      </div>
+      <div class="pure-u-1 center">
+      <a id="bike" data-click="APP.transportation.events.selectTransportation" data-role="button"><img src="img/bike.png"/></a>
+      </div>
+      <div class="pure-u-1 center">
+      <a id="foot" data-click="APP.transportation.events.selectTransportation" data-role="button"><img src="img/foot.png"/></a>
+      </div>
+  </div>
+</script>
+
+
+<script type="text/x-kendo-template" id="days-template">
+  <a class="pure-button trans" href="#: url #">#: name #</a>
+</script>

@@ -1,0 +1,59 @@
+<div data-role="view" id="today"  data-model="APP.today.model" data-init="APP.today.events.init" data-after-show="APP.today.events.afterShow">
+
+
+ <header data-role="header">
+    <div data-role="navbar">
+        <span data-role="view-title"></span>
+          <a data-role="button" href="#leftNav" data-rel="drawer" data-align="left">
+            <span class="icon-lines"></span>
+          </a>
+    </div>
+  </header>
+
+<span id="conditions" data-bind="source: today" data-template="today-template"></span>
+
+<div data-role="footer">
+    <footer data-role="footer">
+      <div data-role="navbar">
+          <span data-bind="source: days" data-template="days-template">
+          </span>
+      </div>
+    </footer>
+</div>
+
+
+
+</div>
+
+<div id="modal" data-role="modalview" style="width: 80%; height: 70%;background-color:#2099FF">
+    <h2 align="center">Please wait while we find your local weather!</h2>
+    <p align="center"><img src="img/foot.png"/></p>
+</div>
+
+<script type="text/x-kendo-template" id="today-template">
+  <div class="pure-g">
+        <div class="pure-u-1-2 left-panel weather">
+          <p align="center" class="announcement">Now</p>
+          <p align="center" class="current"></p>
+          <h2 align="center" class="current_temp"></h2>
+        </div>
+        <div class="pure-u-1-2 right-panel weather">
+          <p class="departure_time announcement" align="center"></p>
+          <p align="center" class="future">
+            <img class="transportation" width="50%"/>
+          </p>
+          <p align="center" class="departure"></p>
+          <h2 align="center" class="departure_temp"></h2>
+        </div>
+        <div class="pure-u-1 weather">
+          <p align="center">cat placeholder</p>
+        </div>
+  </div>
+</script>
+
+
+
+
+<script type="text/x-kendo-template" id="days-template">
+  <a class="pure-button trans" href="#: url #">#: name #</a>
+</script>

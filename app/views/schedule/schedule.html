@@ -1,0 +1,46 @@
+<div data-role="view" id="schedule" data-model="APP.schedule.model" data-init="APP.schedule.events.init" data-after-show="APP.schedule.events.afterShow">
+
+  <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+            <a data-role="button" href="#leftNav" data-rel="drawer" data-align="left">
+              <span class="icon-lines"></span>
+            </a>
+        </div>
+    </header>
+
+
+  <div class="pure-g">
+  <div class="pure-u-1 center">
+    <h2>When do you leave for school?</h2>
+      <form id="departure_form" class="pure-form">
+        <fieldset>
+            
+              <input data-bind="value: departure_time" id="departure_time" type="time" required>
+            
+              <button data-bind="click: saveSchedule" class="save-button button-large pure-button pure-button-primary">Save</button>
+          
+        </fieldset>
+      </form>
+
+  </div>
+</div>
+
+<div data-role="footer">
+    <footer data-role="footer">
+      <div data-role="navbar">
+          <a data-bind="source: days" data-template="days-template"></a>
+      </div>
+    </footer>
+</div>
+
+
+
+</div>
+
+
+
+
+<script type="text/x-kendo-template" id="days-template">
+  <a class="pure-button trans" href="#: url #">#: name #</a>
+</script>

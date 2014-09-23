@@ -10,18 +10,19 @@
     </header>
 
 
-  <div class="pure-g">
-  <div class="pure-u-1 center">
-    <h2>When do you leave for school?</h2>
-      <form id="departure_form" class="pure-form">
-        <fieldset>
+ <div class="pure-g">
+    <div class="pure-u-1">
+      <p class="heading">At what time do you leave to go to school?</p>
+      <div class="transport rounded">
+        <form id="departure_form" style="padding:20px">
             
-              <input data-bind="value: departure_time" id="departure_time" type="time" required>
+              <input data-bind="value: departure_time" id="departure_time" type="time" required style="margin:10px">
             
               <button data-bind="click: saveSchedule" class="save-button button-large pure-button pure-button-primary">Save</button>
-          
-        </fieldset>
-      </form>
+        
+        </form>
+
+      </div>
 
   </div>
 </div>

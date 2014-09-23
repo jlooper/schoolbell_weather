@@ -15,7 +15,7 @@ define([
   var days = new kendo.data.DataSource({
     data: [
       { name: 'Tomorrow', url: '#tomorrow'  },
-      { name: 'Five Day Forecast', url: '#fiveday'  }
+      { name: 'Five Days', url: '#fiveday'  }
     ]
   });
 

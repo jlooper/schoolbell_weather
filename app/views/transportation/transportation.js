@@ -19,7 +19,7 @@ define([
  var days = new kendo.data.DataSource({
     data: [
       { name: 'Tomorrow', url: '#tomorrow'  },
-      { name: 'Five Day Forecast', url: '#fiveday'  }
+      { name: 'Five Days', url: '#fiveday'  }
     ]
   });
 
@@ -46,6 +46,7 @@ define([
     selectTransportation: function(e){
       var type = this.element.prop("id");
       localStorage.setItem("transportation",type);
+      alert("Setting Saved!")
     }
   };
 

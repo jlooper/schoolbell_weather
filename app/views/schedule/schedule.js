@@ -14,7 +14,7 @@ define([
   var days = new kendo.data.DataSource({
     data: [
       { name: 'Tomorrow', url: '#tomorrow'  },
-      { name: 'Five Day Forecast', url: '#fiveday'  }
+      { name: 'Five Days', url: '#fiveday'  }
     ]
   });
 
@@ -24,7 +24,8 @@ define([
     departure_time: localStorage.getItem('departure_time'),
     saveSchedule: function(e){
       e.preventDefault();
-      localStorage.setItem('departure_time',e.data.departure_time)
+      localStorage.setItem('departure_time',e.data.departure_time);
+      alert("Setting Saved!")
     }
   });
 

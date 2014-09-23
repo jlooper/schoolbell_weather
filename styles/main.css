@@ -7,6 +7,10 @@ body {
 .km-view-title,.navigation{
   background-color:#305A7C;
 }
+/*typography*/
+.heading{
+  font-size:1.2em;
+}
 /*panels*/
 .left-panel{
   background-color:rgb(34, 136, 225);
@@ -19,16 +23,10 @@ body {
   margin-right: auto;
   width: 70%;
 }
-.announcement{
-  font-size:2em;
-}
 .pure-form input{
   width:100%
 }
-/*labels*/
-.now{
-  font-size:200%;
-}
+
 /*override button background color*/
 .trans{
   background-color:transparent;
@@ -36,6 +34,10 @@ body {
 .rounded{
    margin:10px;
    border-radius: 10px;
+
+}
+.transport{
+  background-color:#6CBBFF;
 }
 /*panels for weather 5 day etc*/
 .date0{

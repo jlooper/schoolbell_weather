@@ -16,13 +16,16 @@ define([
     // intialize the application
     APP.instance = new kendo.mobile.Application(document.body, { skin: 'pure', loading: "<h1>Please wait...</h1>" });
 
-    APP.forecast_key = 'your_key';
+    APP.forecast_key = 'c9002942b156fa5d0583934e2b1eced8';
+
 
   };
   var setVars = function () {
 
-   $('#modal').data("kendoMobileModalView").open();
-   $('#today').hide();         
+   $('#please_wait').show();
+   $('#conditions').hide();  
+   $('.header').hide(); 
+   $('.footer').hide();         
 
     if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
@@ -43,8 +46,12 @@ define([
       }
 
       //set some defaults and paint the divs
-      localStorage.setItem('departure_time','08:00 AM');
-      localStorage.setItem('transportation','bus');
+      if (localStorage.getItem('departure_time') == ''){
+        localStorage.setItem('departure_time','08:00');
+      }
+      if (localStorage.getItem('transportation') == ''){
+        localStorage.setItem('transportation','bus');
+      }
 
       $('.transportation').attr("src","img/"+localStorage.getItem("transportation")+".png");
 
@@ -53,7 +60,6 @@ define([
   var getCurrent = function (lat,long) {
 
     var url = 'https://api.forecast.io/forecast/' + APP.forecast_key + '/' + lat + ',' + long + '';
-    console.log(url)
     var forecast = new kendo.data.DataSource({
 
         transport: {
@@ -107,13 +113,34 @@ define([
 
   };
   var getScheduledForecast = function (lat,long) {
-
-    var today = moment().format('YYYY MM DD');
-    var departure = today+','+localStorage.getItem('departure_time');
-    var my_departure_time = moment(departure).format();
     
-    var timed_url = 'https://api.forecast.io/forecast/' + APP.forecast_key + '/' + lat + ',' + long + ',' + my_departure_time + '';
+    function ISODateString(d,t){
 
+       var today = localStorage.getItem('departure_time')
+       //split that string
+       if(today==null){
+         var hour = 08
+         var min = 00}
+         else{var hour = today.slice(0,2)
+       var min = today.slice(3)}
+
+       function pad(n){return n<10 ? '0'+n : n}
+       return d.getUTCFullYear()+'-'
+            + pad(d.getUTCMonth()+1)+'-'
+            + pad(d.getUTCDate())+'T'
+            + hour+':'
+            + min+':'
+            + '00'
+      }
+
+var todays_date = new Date();
+var todays_day = todays_date.getDay();
+APP.departure_time = ISODateString(todays_date,todays_day);
+console.log(APP.departure_time)
+    
+    var timed_url = 'https://api.forecast.io/forecast/' + APP.forecast_key + '/' + lat + ',' + long + ',' + APP.departure_time + '';
+    console.log(timed_url)
+    
     var forecast = new kendo.data.DataSource({
 
         transport: {
@@ -138,9 +165,10 @@ define([
                     localStorage.setItem('departure_temp',t[0]+'&deg;');
                   
 
-                    //close the modal and show the pane
-                    $('#modal').data("kendoMobileModalView").close();
-                    $('#today').show();
+                    $('#please_wait').hide();
+                    $('#conditions').show();
+                    $('.header').show();
+                    $('.footer').show();
 
 
                 }

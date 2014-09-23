@@ -42,11 +42,7 @@ define([
       // update the navbar title
       
         navbar.title(page);
-        //$('.current_temp').html(localStorage.getItem('current_temp'));
-        //$('.current').addClass(localStorage.getItem('current_icon'));
-        //$('.departure_temp').html(localStorage.getItem('departure_temp'));
-        //$('.departure').addClass(localStorage.getItem('departure_icon'));
-      
+        
  
     }
   };

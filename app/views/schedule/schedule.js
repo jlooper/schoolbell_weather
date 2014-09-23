@@ -25,6 +25,7 @@ define([
     saveSchedule: function(e){
       e.preventDefault();
       localStorage.setItem('departure_time',e.data.departure_time);
+      window.location.reload();
       alert("Setting Saved!")
     }
   });
@@ -44,7 +45,7 @@ define([
       // update the navbar title
       navbar.title(page);
 
-      //forecast.io data here
+      
     }
   };
 

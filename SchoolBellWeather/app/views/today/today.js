@@ -50,9 +50,30 @@ define([
         
         $('.current_temp').html(localStorage.getItem('current_temp'));
         $('.current').addClass(localStorage.getItem('current_icon'));
-        $('.departure_temp').html(localStorage.getItem('departure_temp'));
+        $('.departure_temp').html(localStorage.getItem('departure_temp')+'&deg;');
         $('.departure').addClass(localStorage.getItem('departure_icon'));
+
+      var icon = localStorage.getItem('departure_icon');
+      var temp = localStorage.getItem('departure_temp');
       
+      console.log(icon,temp)
+      
+      /*forecast.io has these icons:  clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, or partly-cloudy-night.*/
+
+        if(temp >= 70){
+          $('.cat').attr("src","img/hot-cat.png");
+        }
+        else if(temp >= 50 && temp < 70){
+          $('.cat').attr("src","img/warm-cat.png");
+        }
+        else if(temp < 50){
+          $('.cat').attr("src","img/cold-cat.png");
+        }
+        else if(icon == 'icon-rain'){
+          $('.cat').attr("src","img/rain-cat.png");
+        }
+
+
       $('.transportation').attr("src","img/"+localStorage.getItem("transportation")+".png");
 
     }

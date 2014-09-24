@@ -7,9 +7,18 @@ body {
 .km-view-title,.navigation{
   background-color:#305A7C;
 }
+.km-listview{
+  font-size:1.1em;
+}
+.km-list li{
+  border-bottom:1px solid black;
+}
 /*typography*/
 .heading{
   font-size:1.2em;
+}
+.headinglg{
+  font-size:2em;
 }
 /*panels*/
 .left-panel{
@@ -26,7 +35,21 @@ body {
 .pure-form input{
   width:100%
 }
-
+.modal{
+  width: 80%; 
+  height: 70%;
+  background-color:#2099FF;
+  margin-top:50px;
+  padding:10px;
+  display:none;
+  border-radius:5px
+}
+/*cat placement*/
+.cat{
+  position: absolute;
+  bottom: 5px;
+  left: 30%;
+}
 /*override button background color*/
 .trans{
   background-color:transparent;

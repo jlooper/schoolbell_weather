@@ -162,7 +162,7 @@ console.log(APP.departure_time)
                     $('.departure_temp').html(t[0]+'&deg;');
 
                     localStorage.setItem('departure_icon','icon-'+event.response.currently.icon);
-                    localStorage.setItem('departure_temp',t[0]+'&deg;');
+                    localStorage.setItem('departure_temp',t[0]);
                   
 
                     $('#please_wait').hide();

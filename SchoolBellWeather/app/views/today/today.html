@@ -10,8 +10,23 @@
     </div>
   </header>
 
-<span id="conditions" data-bind="source: today" data-template="today-template"></span>
-
+  <div class="pure-g">
+        <div class="pure-u-1-2 left-panel weather">
+          <h2 align="center" class="headinglg">Now</h2>
+          <p align="center" class="current"></p>
+          <h2 align="center" data-bind:"html:current_temp" class="current_temp"></h2>
+        </div>
+        <div class="pure-u-1-2 right-panel weather">
+          <p class="departure_time heading" align="center"></p>
+          <p align="center" class="future">
+            <img class="transportation" width="50%"/>
+          </p>
+          <p align="center" class="departure"></p>
+          <h2 align="center" data-bind:"html:departure_temp" class="departure_temp"></h2>
+        </div>
+       
+  </div>
+       
 <div data-role="footer">
   <div class="footer">
     <img class="cat" width="50%"/>
@@ -36,24 +51,7 @@
     <p align="center"><img src="img/foot.png"/></p>
 </div>
 
-<script type="text/x-kendo-template" id="today-template">
-  <div class="pure-g">
-        <div class="pure-u-1-2 left-panel weather">
-          <h2 align="center" class="headinglg">Now</h2>
-          <p align="center" class="current"></p>
-          <h2 align="center" class="current_temp"></h2>
-        </div>
-        <div class="pure-u-1-2 right-panel weather">
-          <p class="departure_time heading" align="center"></p>
-          <p align="center" class="future">
-            <img class="transportation" width="50%"/>
-          </p>
-          <p align="center" class="departure"></p>
-          <h2 align="center" class="departure_temp"></h2>
-        </div>
-       
-  </div>
-</script>
+  
 
 
 

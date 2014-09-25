@@ -18,20 +18,27 @@ define([
     ]
   });
 
+   
+
   var model = kendo.observable({
     schedule: schedule,
     days: days,
+    isVisible:false,
     departure_time: localStorage.getItem('departure_time'),
     saveSchedule: function(e){
       e.preventDefault();
       localStorage.setItem('departure_time',e.data.departure_time);
-      window.location.reload();
-      alert("Setting Saved!")
+      //console.log(localStorage.getItem('departure_time'))
+      this.set("isVisible",true);      
     }
   });
 
+  kendo.bind($("#notification"), model);
+
+
   var events = {
     init: function (e) {
+
       // store a reference to the navbar component in this view
       navbar = e.view.header.find('.km-navbar').data('kendoMobileNavBar');
     },

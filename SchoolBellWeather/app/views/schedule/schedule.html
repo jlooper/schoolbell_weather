@@ -15,7 +15,7 @@
       <p class="heading">At what time do you leave to go to school?</p>
       <div class="transport rounded">
         <form id="departure_form" style="padding:20px">
-            
+              <div data-bind="visible:isVisible" id="notification">Settings saved!</div>
               <input data-bind="value: departure_time" id="departure_time" type="time" required style="margin:10px">
             
               <button data-bind="click: saveSchedule" class="save-button button-large pure-button pure-button-primary">Save</button>

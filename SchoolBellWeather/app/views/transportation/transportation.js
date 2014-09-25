@@ -28,10 +28,13 @@ define([
     days: days
   });
 
+  kendo.bind($("#notification"), model);
+
   var events = {
     init: function (e) {
       // store a reference to the navbar component in this view
       navbar = e.view.header.find('.km-navbar').data('kendoMobileNavBar');
+      $('#notification').hide()
     },
     afterShow: function (e) {
       // pull the current page off the parameters object
@@ -46,7 +49,7 @@ define([
     selectTransportation: function(e){
       var type = this.element.prop("id");
       localStorage.setItem("transportation",type);
-      alert("Setting Saved!")
+      $('#notification').show()
     }
   };
 

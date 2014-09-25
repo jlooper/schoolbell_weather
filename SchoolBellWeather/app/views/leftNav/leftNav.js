@@ -14,7 +14,8 @@ define([
   var model = {
     leftNav: leftNav
   };
-
+  
+  
   // create a new view
   var view = new View('leftNav', html, model);
 

@@ -20,7 +20,7 @@ define([
       { name: 'Five Days', url: '#fiveday'  }
     ]
   });
-
+//todo build this out
   var model = kendo.observable({
     today: today,
     days: days,
@@ -38,28 +38,8 @@ define([
     },
     afterShow: function (e) {
 
-    function ISODateString(d,t){
-
-       var today = localStorage.getItem('departure_time')
-       //split that string
-       if(today==null){
-         var hour = 08
-         var min = 00}
-         else{var hour = today.slice(0,2)
-       var min = today.slice(3)}
-
-       function pad(n){return n<10 ? '0'+n : n}
-       return d.getUTCFullYear()+'-'
-            + pad(d.getUTCMonth()+1)+'-'
-            + pad(d.getUTCDate())+'T'
-            + hour+':'
-            + min+':'
-            + '00'
-      }
-
-    var todays_date = new Date();
-    var todays_day = todays_date.getDay();
-    APP.departure_time = ISODateString(todays_date,todays_day);
+    var todays_date = moment().format('YYYY-MM-DD').toString();
+    APP.departure_time = todays_date+'T'+localStorage.getItem('departure_time')+':00'
     console.log(APP.departure_time)
     APP.forecast_key = 'c9002942b156fa5d0583934e2b1eced8';
 
@@ -119,7 +99,6 @@ define([
 
 //get timed forecast
     var timed_url = 'https://api.forecast.io/forecast/' + APP.forecast_key + '/' + lat + ',' + long + ',' + APP.departure_time + '';
-    console.log(timed_url)
     
     var forecast = new kendo.data.DataSource({
 
@@ -138,11 +117,15 @@ define([
                     
                     var tmp = event.response.currently.temperature.toString();
                     var t = tmp.split('.');
+                    
+                    
+                    localStorage.setItem('departure_icon','icon-'+event.response.currently.icon);
+                    localStorage.setItem('departure_temp',t[0]);
+
+                    //set this initially; later it is binded
                     $('.departure').addClass('icon-'+event.response.currently.icon);
                     $('.departure_temp').html(t[0]+'&deg;');
 
-                    localStorage.setItem('departure_icon','icon-'+event.response.currently.icon);
-                    localStorage.setItem('departure_temp',t[0]);
                   
 
                     $('#please_wait').hide();
@@ -178,10 +161,7 @@ define([
       var icon = localStorage.getItem('departure_icon');
       var temp = localStorage.getItem('departure_temp');
       
-      console.log(icon,temp)
       
-      /*forecast.io has these icons:  clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, or partly-cloudy-night.*/
-
         if(temp >= 70){
           $('.cat').attr("src","img/hot-cat.png");
         }

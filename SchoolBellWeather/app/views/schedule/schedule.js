@@ -10,19 +10,10 @@ define([
       { title: 'Schedule', page: 'Schedule'}
     ]
   });
-
-  var days = new kendo.data.DataSource({
-    data: [
-      { name: 'Tomorrow', url: '#tomorrow'  },
-      { name: 'Five Days', url: '#fiveday'  }
-    ]
-  });
-
-   
+ 
 
   var model = kendo.observable({
     schedule: schedule,
-    days: days,
     isVisible:false,
     departure_time: localStorage.getItem('departure_time'),
     saveSchedule: function(e){

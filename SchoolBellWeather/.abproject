@@ -1,8 +1,8 @@
 {
 	"ProjectName": "schoolbellweather",
 	"projectVersion": 1,
-	"AppIdentifier": "com.telerik.schoolbellweather",
-	"DisplayName": "School Bell Weather",
+	"AppIdentifier": "com.ladeezfirstmedia.schoolbellweather",
+	"DisplayName": "SchoolWeather",
 	"Author": "",
 	"Description": "",
 	"BundleVersion": "1.0",

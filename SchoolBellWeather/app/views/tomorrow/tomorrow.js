@@ -12,16 +12,10 @@ define([
     ]
   });
 
-  var days = new kendo.data.DataSource({
-    data: [
-      { name: 'Tomorrow', url: '#tomorrow'  },
-      { name: 'Five Days', url: '#fiveday'  }
-    ]
-  });
+  
 
   var model = kendo.observable({
-    tomorrow: tomorrow,
-    days: days
+    tomorrow: tomorrow
   });
 
   var events = {
@@ -30,22 +24,22 @@ define([
       // store a reference to the navbar component in this view
       navbar = e.view.header.find('.km-navbar').data('kendoMobileNavBar');
 
-    },
-    afterShow: function (e) {
-
-      // pull the current page off the parameters object
-      page = e.view.params.page || 'Tomorrow\'s Forecast';
+      },
       
-      // filter the data source against the current page
-      tomorrow.filter({ field: 'page', operator: 'eq', value: page });
+      afterShow: function (e) {
 
-      // update the navbar title
-      
-        navbar.title(page);
-        
- 
-    }
-  };
+          // pull the current page off the parameters object
+          page = e.view.params.page || 'Tomorrow\'s Forecast';
+            
+          // filter the data source against the current page
+          tomorrow.filter({ field: 'page', operator: 'eq', value: page });
+
+          // update the navbar title
+            
+          navbar.title(page);
+       
+          }
+      };
 
   // create a new view
   view = new View('tomorrow', html, model, events);

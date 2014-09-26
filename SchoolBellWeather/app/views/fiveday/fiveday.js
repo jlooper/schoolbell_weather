@@ -12,16 +12,10 @@ define([
     ]
   });
 
-  var days = new kendo.data.DataSource({
-    data: [
-      { name: 'Tomorrow', url: '#tomorrow'  },
-      { name: 'Five Days', url: '#fiveday'  }
-    ]
-  });
+  
 
   var model = kendo.observable({
-    fiveday: fiveday,
-    days: days
+    fiveday: fiveday
   });
 
   var events = {

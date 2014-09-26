@@ -7,7 +7,9 @@ define([
     data: [
       { name: 'Today', url: 'today' },
       { name: 'My Transportation', url: 'transportation' },
-      { name: 'My Schedule', url: 'schedule' }
+      { name: 'My Schedule', url: 'schedule' },
+      { name: 'Tomorrow', url: 'tomorrow' },
+      { name: 'Next Five Days Weather', url: 'fiveday' }
     ]
   });
 

@@ -7,12 +7,38 @@
           <a data-role="button" href="#leftNav" data-rel="drawer" data-align="left">
             <span class="icon-lines"></span>
           </a>
-          <a data-role="button" href="#tutorial" data-rel="drawer" data-align="right">
+          <a data-role="button" class="button-small pure-button pure-button-primary" href="#tutorial-modal" data-rel="modalview" data-align="right">
             ?
           </a>
     </div>
   </header>
+<div data-role="modalview" id="tutorial-modal" style="width:80%;height:80%;background-color:#305A7C;">
+   
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+          <h2>Welcome to School Bell Weather!</h2>
+          <p>You can tell what the weather will be and what you should wear to get to school with School Bell Weather!</p>
+        </div>
+        <div class="pure-u-1-1">
+          <p>Open the left hand menu to set your preferences.</p>
+          <p align="center"><img src="img/tut1.png" width="50%"></p>
+        </div>
+        <div class="pure-u-1-1">
+          <p>Touch 'Schedule' to set your departure time</p>
+          <p align="center"><img src="img/tut3.png" width="50%"></p>
+        </div>
+        <div class="pure-u-1-1">
+          <p>Touch 'Transportation' to set your transportation type</p>
+          <p align="center"><img src="img/tut2.png" width="50%"></p>
+        </div>
+        <div class="pure-u-1-1">
+         <p>Touch 'today' to view the weather now (on the left) and the weather at your departure time (on the right). The weather cat shows you what to wear when you leave.</p>
 
+         <p align="center"><a class="button-small pure-button pure-button-primary" data-role="button" data-click="APP.today.events.closeModal">Ok, I get it!</a></p>
+        </div>
+    </div>
+
+</div>
   <div class="pure-g" id="conditions">
         <div class="pure-u-1-2 left-panel weather">
           <h2 align="center" class="headinglg">Now</h2>
@@ -39,9 +65,10 @@
 
 </div>
 
-<div id="please_wait" class="modal center" style="display:none;">
-    <h2 align="center">Welcome! Please wait while we find your local weather!</h2>
+<div id="please_wait" data-role="modalview" style="width:80%;height:80%;background-color:#2099FF;border-radius:5px">
+    <h2 align="center">Welcome to School Bell Weather!</h2>
     <p align="center"><img src="img/foot.png"/></p>
+    <p align="center">Please wait while we find your local weather!</p>
 </div>
 
   

@@ -9,13 +9,22 @@
         </div>
     </header>
 
+<div data-role="modalview" id="sched-settings-saved-modal" style="width:50%;height:20%;">   
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+          <p align="center">Settings Saved!</p>
+        
+        <p align="center"><a class="button-small pure-button pure-button-primary" data-role="button" data-click="APP.schedule.events.closeModal">Ok</a>
+        </p>
+      </div>
+    </div>
+  </div>
 
  <div class="pure-g">
     <div class="pure-u-1">
       <p class="heading">At what time do you leave to go to school?</p>
       <div class="transport rounded">
         <form id="departure_form" style="padding:20px">
-              <div data-bind="visible:isVisible" id="notification">Settings saved!</div>
               <input data-bind="value: departure_time" id="departure_time" type="time" required style="margin:10px">
             
               <button data-bind="click: saveSchedule" class="save-button button-large pure-button pure-button-primary">Save</button>

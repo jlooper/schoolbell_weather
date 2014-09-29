@@ -16,19 +16,11 @@ define([
 
 
 
- var days = new kendo.data.DataSource({
-    data: [
-      { name: 'Tomorrow', url: '#tomorrow'  },
-      { name: 'Five Days', url: '#fiveday'  }
-    ]
-  });
 
   var model = kendo.observable({
-    transportation: transportation,
-    days: days
+    transportation: transportation
   });
 
-  kendo.bind($("#notification"), model);
 
   var events = {
     init: function (e) {
@@ -49,7 +41,10 @@ define([
     selectTransportation: function(e){
       var type = this.element.prop("id");
       localStorage.setItem("transportation",type);
-      $('#notification').show()
+      $("#trans-settings-saved-modal").data("kendoMobileModalView").open();
+    },
+    closeModal: function (e) {
+      $("#trans-settings-saved-modal").data("kendoMobileModalView").close();
     }
   };
 

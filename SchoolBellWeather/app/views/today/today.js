@@ -144,9 +144,7 @@ define([
 
     var departure_time = todays_date+'T'+localStorage.getItem('departure_time')+':00'
 
-    console.log(departure_time)
-
-
+    
     var timed_url = 'https://api.forecast.io/forecast/' + forecast_key + '/' + lat + ',' + long + ',' + departure_time + '';
     
     var forecast = new kendo.data.DataSource({
@@ -175,10 +173,8 @@ define([
 
 
                     var icon = localStorage.getItem('departure_icon');
-                    console.log(icon)
                     var temp = localStorage.getItem('departure_temp');
-                    console.log(temp)
-
+                    
                     
                       if(temp >= 70){
                         if(icon == 'icon-rain'){

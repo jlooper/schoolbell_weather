@@ -18,14 +18,12 @@ define([
     departure_time: localStorage.getItem('departure_time'),
     saveSchedule: function(e){
       e.preventDefault();
-      localStorage.setItem('departure_time',e.data.departure_time);
-      //console.log(localStorage.getItem('departure_time'))
-      this.set("isVisible",true);      
+      localStorage.setItem('departure_time',e.data.departure_time);    
+      $("#sched-settings-saved-modal").data("kendoMobileModalView").open();
     }
   });
 
-  kendo.bind($("#notification"), model);
-
+  
 
   var events = {
     init: function (e) {
@@ -44,6 +42,9 @@ define([
       navbar.title(page);
 
       
+    },
+    closeModal: function (e) {
+      $("#sched-settings-saved-modal").data("kendoMobileModalView").close();
     }
   };
 

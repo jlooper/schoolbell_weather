@@ -15,7 +15,6 @@ body {
   border-bottom:1px solid black;
 }
 .km-navbar{
-  padding-top:20px;
   background-color:#305A7C;
 }
 .pure-g{
@@ -31,6 +30,18 @@ body {
   padding:10px;
   border-radius:5px;
 }
+.cat{
+  padding-top:50px;
+}
+@media only screen 
+    and (min-device-width : 375px) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+{ 
+  .cat{
+    padding-top:100px;
+  }
+}
+
 /*typography*/
 .heading{
   font-size:1.2em;
@@ -60,10 +71,7 @@ body {
   padding-top:25%;
   border-radius:5px
 }
-/*cat placement*/
-.cat{
-  padding-top:20px;
-}
+
 /*override button background color*/
 .trans{
   background-color:transparent;
@@ -76,10 +84,25 @@ body {
 .transport{
   background-color:#6CBBFF;
 }
-#today{
-  background-image: url('../img/backdrop_sidewalk.png');
+.snow{
+  background-image: url('../img/snow-bg.png');
   background-repeat: repeat-x;
-  background-position: center bottom;
+  background-position: bottom;
+}
+.sun{
+  background-image: url('../img/sun-bg.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+.cold{
+  background-image: url('../img/cold-bg.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+.rain{
+  background-image: url('../img/rain-bg.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
 }
 /*panels for weather 5 day etc*/
 .date0{

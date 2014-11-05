@@ -1,5 +1,28 @@
 Project "schoolbellweather.tmp.proj" (default targets):
-	iOS Build Tooling revision 2014.9.17.2
+	Android Build Tooling revision 2014.10.23.3
 
 
+	Entry for alias jen looper 1 successfully imported.
+Import command completed:  1 entries successfully imported, 0 entries failed or cancelled
+
+	Warning:      [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.jshintrc' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.jshintrc' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.jshintrc' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.gitattributes' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.mailmap' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.jshintrc' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.gitmodules' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.editorconfig' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.jshintrc' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.jshintignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.jshintrc' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Warning:      [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+	Error:    [crunch] Processing image to cache: /tmp/1b01aed74b64444bbb36be18bc3efe17/res/drawable-hdpi/icon.png => /tmp/1b01aed74b64444bbb36be18bc3efe17/bin/rERROR: 9-patch image /tmp/1b01aed74b64444bbb36be18bc3efe17/res/drawable-nodpi/splashscreen.9.png malformed.
 Done building project "schoolbellweather.tmp.proj".

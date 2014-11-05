@@ -1,11 +1,11 @@
 {
 	"ProjectName": "schoolbellweather",
-	"projectVersion": 1,
+	"projectVersion": 2,
 	"AppIdentifier": "com.ladeezfirstmedia.schoolbellweather",
 	"DisplayName": "SchoolWeather",
 	"Author": "",
 	"Description": "",
-	"BundleVersion": "1.0",
+	"BundleVersion": "1.2",
 	"Framework": "Cordova",
 	"FrameworkVersion": "3.5.0",
 	"ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",

@@ -35,6 +35,8 @@ define([
     },
     afterShow: function (e) {
 
+    //$("#refresh-modal").data("kendoMobileModalView").open();
+     
       var forecast_key = 'c9002942b156fa5d0583934e2b1eced8';
 
 
@@ -55,12 +57,14 @@ define([
  
               },
               function (err) {
-                  alert("sorry, we couldn't get your location!")
+                  //alert("sorry, we couldn't get your location!")
+                  $("#location-modal").data("kendoMobileModalView").open();
                   
               });
       }
       else{
-        alert("sorry, we couldn't get your location!")
+        //alert("sorry, we couldn't get your location!")
+        $("#location-modal").data("kendoMobileModalView").open();
       }
 
       var getCurrent = function(){
@@ -105,6 +109,7 @@ define([
                     var tmp = current_conditions.temperature.toString().split('.');                    
                     
                     //we do an initial set here
+                    $('.current').removeClass("icon-clear-day icon-clear-night icon-partly-cloudy-day icon-partly-cloudy-night icon-cloudy icon-lightning icon-rain icon-wind icon-snow icon-sleet icon-fog icon-default");                 
                     $('.current').addClass('icon-'+current_conditions.icon);
                     $('.current_temp').html(tmp[0]+'&deg;');
 
@@ -134,8 +139,12 @@ define([
   forecast.read();
         
       }
+
+  
    
   var getTimed = function(lat,long){
+
+    console.log('refreshing')
 
     //get timed forecast
  var todays_date = moment().format('YYYY-MM-DD').toString();
@@ -164,13 +173,12 @@ define([
                     
                     var tmp = event.response.currently.temperature.toString();
                     var t = tmp.split('.');
-
+                    $('.departure').removeClass("icon-clear-day icon-clear-night icon-partly-cloudy-day icon-partly-cloudy-night icon-cloudy icon-lightning icon-rain icon-wind icon-snow icon-sleet icon-fog icon-default");
                     $('.departure').addClass('icon-'+event.response.currently.icon);
                     $('.departure_temp').html(t[0]+'&deg;');
 
                     localStorage.setItem('departure_icon','icon-'+event.response.currently.icon);
                     localStorage.setItem('departure_temp',t[0]);
-
 
                     var icon = localStorage.getItem('departure_icon');
                     var temp = localStorage.getItem('departure_temp');
@@ -178,31 +186,45 @@ define([
                     
                       if(temp >= 70){
                         if(icon == 'icon-rain'){
-                          $('.cat').attr("src","img/rain-cat.png");                        
+                          $( "#conditions" ).removeClass( "rain sun cold snow" );                          
+                          $('.cat').attr("src","img/rain-cat.png");
+                          $( "#conditions" ).addClass( "rain" );                        
                         }
                         else{
-                          $('.cat').attr("src","img/hot-cat.png");                      
+                          $( "#conditions" ).removeClass( "rain sun cold snow" );                          
+                          $('.cat').attr("src","img/hot-cat.png");
+                          $( "#conditions" ).addClass( "sun" );                       
                         } 
                       }
                       else if(temp >= 50 && temp < 70){
                         
                         if(icon == 'icon-rain'){
+                          $( "#conditions" ).removeClass( "rain sun cold snow" );                          
                           $('.cat').attr("src","img/rain-cat.png");
+                          $( "#conditions" ).addClass( "rain" ); 
                         }
                         else{
+                          $( "#conditions" ).removeClass( "rain sun cold snow" );                          
                           $('.cat').attr("src","img/warm-cat.png");
+                          $( "#conditions" ).addClass( "sun" ); 
                         } 
                       }
                       else if(temp >= 32 && temp < 50){
+                        $( "#conditions" ).removeClass( "rain sun cold snow" );                          
+
                         if(icon == 'icon-rain'){
-                          $('.cat').attr("src","img/rain-cat.png");                        
+                          $('.cat').attr("src","img/rain-cat.png");
+                          $( "#conditions" ).addClass( "rain" );                         
                          }
                         else{
-                          $('.cat').attr("src","img/cold-cat.png");                        
+                          $('.cat').attr("src","img/cold-cat.png");
+                          $( "#conditions" ).addClass( "cold" );                         
                         }
                       }
                       else if(temp < 32){
-                        $('.cat').attr("src","img/snow-cat.png");                               
+                        $( "#conditions" ).removeClass( "rain sun cold snow" );                          
+                        $('.cat').attr("src","img/snow-cat.png");
+                        $( "#conditions" ).addClass( "snow" );                                
                       }
                     
 
@@ -217,19 +239,22 @@ define([
           });
 
     forecast.read();
+    //$("#refresh-modal").data("kendoMobileModalView").close();
+
   }
 
-      page = e.view.params.page || 'Today';
-      
-      today.filter({ field: 'page', operator: 'eq', value: page });
-
-      navbar.title(page);
-        
       $('.transportation').attr("src","img/"+localStorage.getItem("transportation")+".png");
 
     },
+    
+    closeLocationModal: function(e){
+      $("#location-modal").data("kendoMobileModalView").close(); 
+    },
     closeModal: function (e) {
-      $("#tutorial-modal").data("kendoMobileModalView").close();
+      $("#tutorial-modal").data("kendoMobileModalView").close();                  
+    },
+    closeRefreshModal: function(e){
+      $("#refresh-modal").data("kendoMobileModalView").close(); 
     }
   };
 

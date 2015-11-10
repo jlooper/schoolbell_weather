@@ -14,7 +14,6 @@ define([
 
 
   var init = function () {
-
     // intialize the application
     APP.instance = new kendo.mobile.Application(document.body, { skin: 'pure', loading: "<h1>Please wait...</h1>" });
     
